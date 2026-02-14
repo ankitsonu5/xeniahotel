@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Stay | Hotel Xenia</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="logo.png" alt="Hotel Xenia" height="50">
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about_us_redesign.html">About Us</a></li>
+                    <li><a href="services_redesign.html">Services</a></li>
+                    <li><a href="gallery_redesign.html">Gallery</a></li>
+                    <li><a href="contact_us_redesign.html">Contact Us</a></li>
+                    <li><a href="my_account_redesign.html">My Account</a></li>
+                </ul>
+                <a href="booking_redesign.html" class="btn">Book Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section (Subpage) -->
+    <section class="hero"
+        style="height: 40vh; background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size: cover; background-position: center;">
+        <div class="hero-content">
+            <h1>Reserve <strong>Your Stay</strong></h1>
+            <p>Experience luxury at its finest.</p>
+        </div>
+    </section>
+
+    <!-- Booking Search & Results -->
+    <section class="section-padding" style="background-color: var(--bg-off-white); padding-top: 0;">
+        <div class="container">
+
+            <!-- Horizontal Search Bar -->
+            <div class="booking-search-container">
+                <form class="booking-form-inline">
+                    <div class="form-group">
+                        <label>Check In</label>
+                        <input type="date">
+                    </div>
+                    <div class="form-group">
+                        <label>Check Out</label>
+                        <input type="date">
+                    </div>
+                    <div class="form-group">
+                        <label>Guests</label>
+                        <select>
+                            <option>1 Adult</option>
+                            <option>2 Adults</option>
+                            <option>3 Adults</option>
+                            <option>Family</option>
+                        </select>
+                    </div>
+                    <button type="button">Update</button>
+                </form>
+            </div>
+
+            <!-- Room Results -->
+            <div class="room-results">
+
+                <!-- Result 1 -->
+                <div class="room-result-card">
+                    <div class="room-result-img">
+                        <img src="image1.jpeg" alt="Deluxe Room">
+                    </div>
+                    <div class="room-result-content">
+                        <h3>Deluxe Room</h3>
+                        <div class="room-features">
+                            <span><i class="fas fa-bed"></i> King Bed</span>
+                            <span><i class="fas fa-ruler-combined"></i> 40 m²</span>
+                            <span><i class="fas fa-user"></i> Max 2 Guests</span>
+                        </div>
+                        <p>Enjoy a comfortable stay with city views and modern amenities.</p>
+                        <div class="price">$250 / night</div>
+                        <a href="#" class="btn">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Result 2 -->
+                <div class="room-result-card">
+                    <div class="room-result-img">
+                        <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Executive Suite">
+                    </div>
+                    <div class="room-result-content">
+                        <h3>Executive Suite</h3>
+                        <div class="room-features">
+                            <span><i class="fas fa-bed"></i> King Bed</span>
+                            <span><i class="fas fa-ruler-combined"></i> 65 m²</span>
+                            <span><i class="fas fa-user"></i> Max 3 Guests</span>
+                        </div>
+                        <p>Spacious suite with a separate living area and premium bathroom.</p>
+                        <div class="price">$450 / night</div>
+                        <a href="#" class="btn">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Result 3 -->
+                <div class="room-result-card">
+                    <div class="room-result-img">
+                        <img src="https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Presidential Suite">
+                    </div>
+                    <div class="room-result-content">
+                        <h3>Presidential Suite</h3>
+                        <div class="room-features">
+                            <span><i class="fas fa-bed"></i> 2 King Beds</span>
+                            <span><i class="fas fa-ruler-combined"></i> 120 m²</span>
+                            <span><i class="fas fa-user"></i> Max 5 Guests</span>
+                        </div>
+                        <p>The ultimate luxury experience with panoramic views and butler service.</p>
+                        <div class="price">$1200 / night</div>
+                        <a href="#" class="btn">Book Now</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Hotel Xenia</h4>
+                    <p>A luxury experience in the heart of the city. We are dedicated to providing the best service to
+                        our guests.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt" style="color: var(--primary-gold); margin-right: 10px;"></i> 123
+                        Luxury Avenue, City Center</p>
+                    <p><i class="fas fa-phone" style="color: var(--primary-gold); margin-right: 10px;"></i> +1 (555)
+                        123-4567</p>
+                    <p><i class="fas fa-envelope" style="color: var(--primary-gold); margin-right: 10px;"></i>
+                        info@hotelxenia.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about_us_redesign.html">About Us</a></li>
+                        <li><a href="services_redesign.html">Services</a></li>
+                        <li><a href="gallery_redesign.html">Gallery</a></li>
+                        <li><a href="index.html#facilities">Facilities</a></li>
+                        <li><a href="contact_us_redesign.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to our newsletter for offers.</p>
+                    <form style="display: flex; margin-top: 10px;">
+                        <input type="email" placeholder="Email Address"
+                            style="padding: 10px; width: 100%; border: none;">
+                        <button type="submit"
+                            style="background: var(--primary-gold); border: none; padding: 0 15px; color: #fff; cursor: pointer;"><i
+                                class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Hotel Xenia. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

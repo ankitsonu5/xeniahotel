@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery | Hotel Xenia</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="logo.png" alt="Hotel Xenia" height="50">
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about_us_redesign.html">About Us</a></li>
+                    <li><a href="services_redesign.html">Services</a></li>
+                    <li><a href="gallery_redesign.html" class="active">Gallery</a></li>
+                    <li><a href="contact_us_redesign.html">Contact Us</a></li>
+                    <li><a href="my_account_redesign.html">My Account</a></li>
+                </ul>
+                <a href="booking_redesign.html" class="btn">Book Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section (Subpage) -->
+    <section class="hero"
+        style="height: 50vh; background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size: cover; background-position: center;">
+        <div class="hero-content">
+            <h1>Photo <strong>Gallery</strong></h1>
+            <p>A glimpse into the Xenia experience.</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section-padding" style="background-color: #fff;">
+        <div class="container">
+            <div class="text-center section-title">
+                <h2>Our Gallery</h2>
+                <div class="gallery-filters">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Rooms</button>
+                    <button class="filter-btn">Dining</button>
+                    <button class="filter-btn">Events</button>
+                    <button class="filter-btn">Facilities</button>
+                </div>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Rooms -->
+                <div class="gallery-item">
+                    <img src="image1.jpeg" alt="Deluxe Room">
+                </div>
+                <!-- Dining -->
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Restaurant">
+                </div>
+                <!-- Events -->
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/169190/pexels-photo-169190.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Banquet Hall">
+                </div>
+                <!-- Facilities -->
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Swimming Pool">
+                </div>
+
+                <!-- More Rooms -->
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Premium Room">
+                </div>
+                <!-- More Dining -->
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Bar">
+                </div>
+                <!-- More Events/Meeting -->
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Meeting Room">
+                </div>
+                <!-- Exterior/Lobby -->
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Lobby">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Hotel Xenia</h4>
+                    <p>A luxury experience in the heart of the city. We are dedicated to providing the best service to
+                        our guests.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt" style="color: var(--primary-gold); margin-right: 10px;"></i> 123
+                        Luxury Avenue, City Center</p>
+                    <p><i class="fas fa-phone" style="color: var(--primary-gold); margin-right: 10px;"></i> +1 (555)
+                        123-4567</p>
+                    <p><i class="fas fa-envelope" style="color: var(--primary-gold); margin-right: 10px;"></i>
+                        info@hotelxenia.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about_us_redesign.html">About Us</a></li>
+                        <li><a href="services_redesign.html">Services</a></li>
+                        <li><a href="gallery_redesign.html">Gallery</a></li>
+                        <li><a href="index.html#facilities">Facilities</a></li>
+                        <li><a href="contact_us_redesign.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to our newsletter for offers.</p>
+                    <form style="display: flex; margin-top: 10px;">
+                        <input type="email" placeholder="Email Address"
+                            style="padding: 10px; width: 100%; border: none;">
+                        <button type="submit"
+                            style="background: var(--primary-gold); border: none; padding: 0 15px; color: #fff; cursor: pointer;"><i
+                                class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Hotel Xenia. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

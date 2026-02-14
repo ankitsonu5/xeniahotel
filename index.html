@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Xenia | Luxury Stay</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="logo.png" alt="Hotel Xenia" height="50">
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about_us_redesign.html">About Us</a></li>
+                    <li><a href="services_redesign.html">Services</a></li>
+                    <li><a href="gallery_redesign.html">Gallery</a></li>
+                    <li><a href="contact_us_redesign.html">Contact Us</a></li>
+                    <li><a href="my_account_redesign.html">My Account</a></li>
+                </ul>
+                <a href="booking_redesign.html" class="btn">Book Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero"
+        style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size: cover; background-position: center;">
+        <div class="hero-content">
+            <h1>Convenient <strong>City Location</strong></h1>
+            <p>Experience luxury and comfort in the heart of the city.</p>
+        </div>
+    </section>
+
+    <!-- Booking Bar -->
+    <div class="container">
+        <div class="booking-bar">
+            <form class="booking-form">
+                <div class="form-group">
+                    <label>Check In</label>
+                    <input type="date">
+                </div>
+                <div class="form-group">
+                    <label>Check Out</label>
+                    <input type="date">
+                </div>
+                <div class="form-group">
+                    <label>Adults</label>
+                    <select>
+                        <option>1 Adult</option>
+                        <option>2 Adults</option>
+                        <option>3 Adults</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Children</label>
+                    <select>
+                        <option>0 Children</option>
+                        <option>1 Child</option>
+                        <option>2 Children</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Check Availability</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Welcome to <strong>Hotel Xenia</strong></h2>
+                    <p>Located in the heart of the city, Hotel Xenia offers a perfect blend of modern luxury and
+                        traditional
+                        hospitality. Whether you are traveling for business or leisure, our hotel provides a comfortable
+                        and
+                        memorable stay. Experience our warm hospitality and state-of-the-art amenities.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        alt="Hotel Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Rooms Section -->
+    <section id="rooms" class="section-padding services-section">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Our Rooms</h2>
+                <p>Comfort and elegance in every detail</p>
+            </div>
+            <div class="rooms-grid">
+                <!-- Deluxe Room -->
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="image1.jpeg" alt="Deluxe Room">
+                    </div>
+                    <div class="room-details">
+                        <h3>Deluxe Room</h3>
+                        <ul class="room-meta">
+                            <li><i class="fas fa-user"></i> 2 Adults</li>
+                            <li><i class="fas fa-wifi"></i> Free Wifi</li>
+                            <li><i class="fas fa-bed"></i> 1 Bed</li>
+                        </ul>
+                        <p>A distinctive blend of comfort and style, perfect for the modern traveler.</p>
+                        <div style="margin-top: 15px;">
+                            <a href="#" class="btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Premium Room -->
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Premium Room">
+                    </div>
+                    <div class="room-details">
+                        <h3>Premium Room</h3>
+                        <ul class="room-meta">
+                            <li><i class="fas fa-user_friends"></i> 3 Adults</li>
+                            <li><i class="fas fa-wifi"></i> Free Wifi</li>
+                            <li><i class="fas fa-bed"></i> 2 Beds</li>
+                        </ul>
+                        <p>Spacious and elegantly designed with premium amenities for a luxurious stay.</p>
+                        <div style="margin-top: 15px;">
+                            <a href="#" class="btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Additional Room for Grid Balance -->
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Suite">
+                    </div>
+                    <div class="room-details">
+                        <h3>Executive Suite</h3>
+                        <ul class="room-meta">
+                            <li><i class="fas fa-user-tie"></i> 2 Adults</li>
+                            <li><i class="fas fa-wine-glass"></i> Minibar</li>
+                            <li><i class="fas fa-bath"></i> Jacuzzi</li>
+                        </ul>
+                        <p>The ultimate luxury experience with panoramic city views and exclusive services.</p>
+                        <div style="margin-top: 15px;">
+                            <a href="#" class="btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section-padding testimonials-section">
+        <div class="container">
+            <div class="testimonial-box">
+                <i class="fas fa-quote-left"
+                    style="font-size: 2rem; color: var(--primary-gold); margin-bottom: 20px;"></i>
+                <p>"We enjoyed our stay at Hotel Xenia greatly. The staff were friendly and attentive to every one of
+                    our needs."</p>
+                <div class="testimonial-author">- Happy Guest</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities -->
+    <section id="facilities" class="section-padding facilities-section">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Hotel Facilities</h2>
+                <p>Everything you need for a perfect stay</p>
+            </div>
+            <div class="facilities-grid">
+                <div class="facility-item">
+                    <i class="fas fa-city facility-icon"></i>
+                    <h4>City Views</h4>
+                    <p>Enjoy breathtaking views of the city skyline from your room.</p>
+                </div>
+                <div class="facility-item">
+                    <i class="fas fa-wifi facility-icon"></i>
+                    <h4>Wifi Facility</h4>
+                    <p>High-speed internet access available throughout the hotel.</p>
+                </div>
+                <div class="facility-item">
+                    <i class="fas fa-shopping-bag facility-icon"></i>
+                    <h4>Mall Facility</h4>
+                    <p>Convenient access to shopping centers and malls nearby.</p>
+                </div>
+                <div class="facility-item">
+                    <i class="fas fa-ticket-alt facility-icon"></i>
+                    <h4>Travel Desk</h4>
+                    <p>Our travel desk is happy to help you plan your city tours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Hotel Xenia</h4>
+                    <p>A luxury experience in the heart of the city. We are dedicated to providing the best service to
+                        our guests.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt" style="color: var(--primary-gold); margin-right: 10px;"></i> 123
+                        Luxury Avenue, City Center</p>
+                    <p><i class="fas fa-phone" style="color: var(--primary-gold); margin-right: 10px;"></i> +1 (555)
+                        123-4567</p>
+                    <p><i class="fas fa-envelope" style="color: var(--primary-gold); margin-right: 10px;"></i>
+                        info@hotelxenia.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about_us_redesign.html">About Us</a></li>
+                        <li><a href="services_redesign.html">Services</a></li>
+                        <li><a href="gallery_redesign.html">Gallery</a></li>
+                        <li><a href="index.html#facilities">Facilities</a></li>
+                        <li><a href="contact_us_redesign.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to our newsletter for offers.</p>
+                    <form style="display: flex; margin-top: 10px;">
+                        <input type="email" placeholder="Email Address"
+                            style="padding: 10px; width: 100%; border: none;">
+                        <button type="submit"
+                            style="background: var(--primary-gold); border: none; padding: 0 15px; color: #fff; cursor: pointer;"><i
+                                class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Hotel Xenia. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
