@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Room | Hotel Xenia</title>
+    <meta name="description"
+        content="Complete your reservation at Hotel Xenia. Fill in your details and secure your luxury stay in the heart of the city.">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* ===== Book Room Page Specific Styles ===== */
+
+        /* Hero Banner */
+        .booking-hero {
+            height: 40vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('../varanasi-2.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .booking-hero h1 {
+            font-size: 3.5rem;
+            color: #fff;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            font-weight: 400;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .booking-hero h1 strong {
+            color: var(--primary-gold);
+        }
+
+        .booking-hero .breadcrumb {
+            margin-top: 12px;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .booking-hero .breadcrumb a {
+            color: var(--primary-gold);
+            transition: color 0.3s ease;
+        }
+
+        .booking-hero .breadcrumb a:hover {
+            color: #fff;
+        }
+
+        /* Main Layout */
+        .booking-page-layout {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 40px;
+            padding: 60px 0 80px;
+        }
+
+        /* ===== Form Section ===== */
+        .booking-form-section {
+            background: #fff;
+            border-radius: 6px;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        .form-section-header {
+            background: var(--bg-dark);
+            padding: 24px 35px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .form-section-header i {
+            color: var(--primary-gold);
+            font-size: 1.3rem;
+        }
+
+        .form-section-header h3 {
+            color: #fff;
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+
+        .form-section-body {
+            padding: 35px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 22px;
+        }
+
+        .form-row.single {
+            grid-template-columns: 1fr;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-field label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #888;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .form-field label .required {
+            color: #e74c3c;
+            margin-left: 2px;
+        }
+
+        .form-field input,
+        .form-field select,
+        .form-field textarea {
+            padding: 13px 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background: #fafafa;
+        }
+
+        .form-field input:focus,
+        .form-field select:focus,
+        .form-field textarea:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
+            background: #fff;
+        }
+
+        .form-field textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-field input::placeholder,
+        .form-field textarea::placeholder {
+            color: #bbb;
+        }
+
+        /* Section Divider */
+        .form-divider {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 30px 0;
+        }
+
+        /* Payment Section */
+        .payment-methods {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .payment-option {
+            flex: 1;
+            min-width: 140px;
+            border: 2px solid #eee;
+            border-radius: 6px;
+            padding: 16px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .payment-option:hover {
+            border-color: var(--primary-gold-light);
+            background: rgba(212, 175, 55, 0.03);
+        }
+
+        .payment-option.selected {
+            border-color: var(--primary-gold);
+            background: rgba(212, 175, 55, 0.06);
+            box-shadow: 0 2px 10px rgba(212, 175, 55, 0.15);
+        }
+
+        .payment-option i {
+            font-size: 1.8rem;
+            color: var(--primary-gold);
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .payment-option span {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #555;
+        }
+
+        .payment-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+        }
+
+        /* Terms */
+        .terms-check {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin: 25px 0 30px;
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .terms-check input[type="checkbox"] {
+            margin-top: 4px;
+            accent-color: var(--primary-gold);
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .terms-check a {
+            color: var(--primary-gold);
+            text-decoration: underline;
+        }
+
+        .terms-check a:hover {
+            color: var(--primary-gold-dark);
+        }
+
+        /* Submit Button */
+        .submit-booking-btn {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background: var(--gold-gradient);
+            background-size: 200% auto;
+            color: #fff;
+            border: none;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-booking-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .submit-booking-btn:hover {
+            background-position: right center;
+            box-shadow: var(--shadow-gold);
+            transform: translateY(-2px);
+        }
+
+        .submit-booking-btn:hover::before {
+            left: 100%;
+        }
+
+        /* ===== Sidebar ===== */
+        .booking-sidebar {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+        }
+
+        .sidebar-card {
+            background: #fff;
+            border-radius: 6px;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+
+        .sidebar-card-header {
+            background: var(--bg-dark);
+            padding: 18px 24px;
+        }
+
+        .sidebar-card-header h4 {
+            color: var(--primary-gold);
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+
+        .sidebar-card-body {
+            padding: 24px;
+        }
+
+        /* Room Preview */
+        .room-preview-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 18px;
+        }
+
+        .room-preview-name {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .room-preview-features {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .room-preview-features span {
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        .room-preview-features i {
+            color: var(--primary-gold);
+            margin-right: 4px;
+        }
+
+        /* Stay Details */
+        .stay-detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.9rem;
+        }
+
+        .stay-detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .stay-detail-label {
+            color: #888;
+        }
+
+        .stay-detail-value {
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        /* Price Summary */
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .price-row.total {
+            border-top: 2px solid var(--primary-gold);
+            margin-top: 10px;
+            padding-top: 15px;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .price-row.total .price-amount {
+            color: var(--primary-gold);
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+        }
+
+        /* Help Card */
+        .help-card {
+            text-align: center;
+            padding: 30px 24px;
+        }
+
+        .help-card i {
+            font-size: 2rem;
+            color: var(--primary-gold);
+            margin-bottom: 12px;
+        }
+
+        .help-card h4 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .help-card p {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 5px;
+        }
+
+        .help-card a {
+            color: var(--primary-gold);
+            font-weight: 700;
+        }
+
+        .help-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Progress Steps */
+        .booking-steps {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            padding: 30px 0 0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .step::after {
+            content: '';
+            position: absolute;
+            top: 18px;
+            right: -50%;
+            width: 100%;
+            height: 2px;
+            background: #ddd;
+            z-index: 0;
+        }
+
+        .step:last-child::after {
+            display: none;
+        }
+
+        .step.active::after {
+            background: var(--primary-gold);
+        }
+
+        .step-number {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #eee;
+            color: #999;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .step.active .step-number {
+            background: var(--primary-gold);
+            color: #fff;
+            box-shadow: 0 3px 12px rgba(212, 175, 55, 0.4);
+        }
+
+        .step.completed .step-number {
+            background: var(--primary-gold);
+            color: #fff;
+        }
+
+        .step-label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #aaa;
+            font-weight: 700;
+        }
+
+        .step.active .step-label {
+            color: var(--primary-gold);
+        }
+
+        .step.completed .step-label {
+            color: var(--primary-gold-dark);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .booking-page-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .booking-sidebar {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .booking-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .payment-methods {
+                flex-direction: column;
+            }
+
+            .booking-steps {
+                padding: 20px 0 0;
+            }
+
+            .step-label {
+                font-size: 0.65rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header style="position: relative; background: #0d0d0d;">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../logo.png" alt="Hotel Xenia" height="50">
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about_us_redesign.html">About Us</a></li>
+                    <li><a href="../services_redesign.html">Services</a></li>
+                    <li><a href="../gallery_redesign.html">Gallery</a></li>
+                    <li><a href="../contact_us_redesign.html">Contact Us</a></li>
+                    <li><a href="../my_account_redesign.html">My Account</a></li>
+                </ul>
+                <a href="../booking_redesign.html" class="btn">Book Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="booking-hero">
+        <div class="hero-content">
+            <h1>Complete Your <strong>Reservation</strong></h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &nbsp;/&nbsp; <a href="../booking_redesign.html">Rooms</a>
+                &nbsp;/&nbsp; <span>Book Now</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Progress Steps -->
+    <div class="container">
+        <div class="booking-steps">
+            <div class="step completed">
+                <span class="step-number"><i class="fas fa-check" style="font-size:0.7rem"></i></span>
+                <span class="step-label">Choose Room</span>
+            </div>
+            <div class="step active">
+                <span class="step-number">2</span>
+                <span class="step-label">Your Details</span>
+            </div>
+            <div class="step">
+                <span class="step-number">3</span>
+                <span class="step-label">Confirmation</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <section class="section-padding" style="background-color: var(--bg-off-white);">
+        <div class="container">
+            <div class="booking-page-layout">
+
+                <!-- Booking Form -->
+                <div>
+                    <!-- Guest Details -->
+                    <div class="booking-form-section" style="margin-bottom: 30px;">
+                        <div class="form-section-header">
+                            <i class="fas fa-user-circle"></i>
+                            <h3>Guest Details</h3>
+                        </div>
+                        <div class="form-section-body">
+                            <form id="bookingForm">
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label>First Name <span class="required">*</span></label>
+                                        <input type="text" id="firstName" placeholder="Enter your first name" required>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>Last Name <span class="required">*</span></label>
+                                        <input type="text" id="lastName" placeholder="Enter your last name" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label>Email Address <span class="required">*</span></label>
+                                        <input type="email" id="email" placeholder="your@email.com" required>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>Phone Number <span class="required">*</span></label>
+                                        <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label>Country</label>
+                                        <select id="country">
+                                            <option value="">Select Country</option>
+                                            <option value="IN" selected>India</option>
+                                            <option value="US">United States</option>
+                                            <option value="GB">United Kingdom</option>
+                                            <option value="AE">United Arab Emirates</option>
+                                            <option value="AU">Australia</option>
+                                            <option value="CA">Canada</option>
+                                            <option value="DE">Germany</option>
+                                            <option value="FR">France</option>
+                                            <option value="JP">Japan</option>
+                                            <option value="SG">Singapore</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>ID / Passport Number</label>
+                                        <input type="text" id="idNumber" placeholder="Government ID or Passport">
+                                    </div>
+                                </div>
+
+                                <hr class="form-divider">
+
+                                <!-- Stay Details -->
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label>Check-In Date <span class="required">*</span></label>
+                                        <input type="date" id="checkin" required>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>Check-Out Date <span class="required">*</span></label>
+                                        <input type="date" id="checkout" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label>Number of Adults</label>
+                                        <select id="adults">
+                                            <option value="1">1 Adult</option>
+                                            <option value="2" selected>2 Adults</option>
+                                            <option value="3">3 Adults</option>
+                                            <option value="4">4 Adults</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>Number of Children</label>
+                                        <select id="children">
+                                            <option value="0" selected>No Children</option>
+                                            <option value="1">1 Child</option>
+                                            <option value="2">2 Children</option>
+                                            <option value="3">3 Children</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label>Room Type</label>
+                                        <select id="roomType">
+                                            <option value="deluxe">Deluxe Room — ₹3,500 / night</option>
+                                            <option value="executive">Executive Suite — ₹4,500 / night</option>
+                                            <option value="presidential">Presidential Suite — ₹6,500 / night</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>Number of Rooms</label>
+                                        <select id="numRooms">
+                                            <option value="1" selected>1 Room</option>
+                                            <option value="2">2 Rooms</option>
+                                            <option value="3">3 Rooms</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-row single">
+                                    <div class="form-field">
+                                        <label>Special Requests</label>
+                                        <textarea id="specialRequests"
+                                            placeholder="Airport pickup, extra bed, early check-in, dietary requirements, etc."></textarea>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Payment Section -->
+                    <div class="booking-form-section">
+                        <div class="form-section-header">
+                            <i class="fas fa-credit-card"></i>
+                            <h3>Payment Method</h3>
+                        </div>
+                        <div class="form-section-body">
+                            <div class="payment-methods">
+                                <label class="payment-option selected">
+                                    <input type="radio" name="payment" value="card" checked>
+                                    <i class="fas fa-credit-card"></i>
+                                    <span>Credit Card</span>
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="upi">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>UPI</span>
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="bank">
+                                    <i class="fas fa-university"></i>
+                                    <span>Bank Transfer</span>
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="payathotel">
+                                    <i class="fas fa-hotel"></i>
+                                    <span>Pay at Hotel</span>
+                                </label>
+                            </div>
+
+                            <!-- Card Details (shown by default) -->
+                            <div id="cardDetails">
+                                <div class="form-row single">
+                                    <div class="form-field">
+                                        <label>Card Holder Name</label>
+                                        <input type="text" placeholder="Name on card">
+                                    </div>
+                                </div>
+                                <div class="form-row single">
+                                    <div class="form-field">
+                                        <label>Card Number</label>
+                                        <input type="text" placeholder="XXXX  XXXX  XXXX  XXXX" maxlength="19">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label>Expiry Date</label>
+                                        <input type="text" placeholder="MM / YY" maxlength="7">
+                                    </div>
+                                    <div class="form-field">
+                                        <label>CVV</label>
+                                        <input type="password" placeholder="•••" maxlength="4">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="terms-check">
+                                <input type="checkbox" id="termsAgree">
+                                <label for="termsAgree">I agree to the <a href="#">Terms & Conditions</a>, <a
+                                        href="#">Cancellation Policy</a>, and <a href="#">Privacy Policy</a> of Hotel
+                                    Xenia. I confirm that the information provided is accurate.</label>
+                            </div>
+
+                            <button type="submit" class="submit-booking-btn" onclick="handleBooking(event)">
+                                <i class="fas fa-lock" style="margin-right: 10px;"></i> Confirm & Secure Booking
+                            </button>
+
+                            <p style="text-align:center; margin-top: 15px; font-size: 0.8rem; color: #aaa;">
+                                <i class="fas fa-shield-alt" style="margin-right: 5px;"></i>
+                                Your payment details are encrypted and secure.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="booking-sidebar">
+
+                    <!-- Room Summary -->
+                    <div class="sidebar-card">
+                        <div class="sidebar-card-header">
+                            <h4><i class="fas fa-bed" style="margin-right: 8px;"></i> Your Room</h4>
+                        </div>
+                        <div class="sidebar-card-body">
+                            <img src="../image1.jpeg" alt="Deluxe Room" class="room-preview-img">
+                            <div class="room-preview-name" id="sidebarRoomName">Deluxe Room</div>
+                            <div class="room-preview-features">
+                                <span><i class="fas fa-bed"></i> King Bed</span>
+                                <span><i class="fas fa-ruler-combined"></i> 40 m²</span>
+                                <span><i class="fas fa-user"></i> Max 2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stay Summary -->
+                    <div class="sidebar-card">
+                        <div class="sidebar-card-header">
+                            <h4><i class="fas fa-calendar-alt" style="margin-right: 8px;"></i> Stay Summary</h4>
+                        </div>
+                        <div class="sidebar-card-body">
+                            <div class="stay-detail-row">
+                                <span class="stay-detail-label">Check-in</span>
+                                <span class="stay-detail-value" id="sidebarCheckin">—</span>
+                            </div>
+                            <div class="stay-detail-row">
+                                <span class="stay-detail-label">Check-out</span>
+                                <span class="stay-detail-value" id="sidebarCheckout">—</span>
+                            </div>
+                            <div class="stay-detail-row">
+                                <span class="stay-detail-label">Duration</span>
+                                <span class="stay-detail-value" id="sidebarNights">—</span>
+                            </div>
+                            <div class="stay-detail-row">
+                                <span class="stay-detail-label">Guests</span>
+                                <span class="stay-detail-value" id="sidebarGuests">2 Adults</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Price Breakdown -->
+                    <div class="sidebar-card">
+                        <div class="sidebar-card-header">
+                            <h4><i class="fas fa-receipt" style="margin-right: 8px;"></i> Price Breakdown</h4>
+                        </div>
+                        <div class="sidebar-card-body">
+                            <div class="price-row">
+                                <span>Room Rate</span>
+                                <span id="priceRate">₹3,500 / night</span>
+                            </div>
+                            <div class="price-row">
+                                <span id="priceNightsLabel">× 1 night</span>
+                                <span id="priceSubtotal">₹3,500</span>
+                            </div>
+                            <div class="price-row">
+                                <span>Taxes & Fees (18%)</span>
+                                <span id="priceTax">₹630</span>
+                            </div>
+                            <div class="price-row total">
+                                <span>Total</span>
+                                <span class="price-amount" id="priceTotal">₹4,130</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Need Help -->
+                    <div class="sidebar-card">
+                        <div class="help-card">
+                            <i class="fas fa-headset"></i>
+                            <h4>Need Assistance?</h4>
+                            <p>Our concierge team is available 24/7</p>
+                            <p><a href="tel:+15551234567"><i class="fas fa-phone" style="margin-right: 5px;"></i>+1
+                                    (555) 123-4567</a></p>
+                            <p><a href="mailto:reservations@hotelxenia.com"><i class="fas fa-envelope"
+                                        style="margin-right: 5px;"></i>reservations@hotelxenia.com</a></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Hotel Xenia</h4>
+                    <p>A luxury experience in the heart of the city. We are dedicated to providing the best service to
+                        our guests.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p class="footer-contact-item"><i class="fas fa-map-marker-alt"></i>
+                        D-63/11 Akk, Beside Galaxy hospital Mahmoorganj, Varanasi</p>
+                    <p class="footer-contact-item"><i class="fas fa-phone"></i> +91
+                        9151000140</p>
+                    <p class="footer-contact-item"><i class="fas fa-envelope"></i>
+                        reservation@hotelxenia.in</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../about_us_redesign.html">About Us</a></li>
+                        <li><a href="../services_redesign.html">Services</a></li>
+                        <li><a href="../gallery_redesign.html">Gallery</a></li>
+                        <li><a href="../index.html#facilities">Facilities</a></li>
+                        <li><a href="../contact_us_redesign.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to our newsletter for offers.</p>
+                    <form class="footer-newsletter-form">
+                        <input type="email" placeholder="Email Address" class="footer-newsletter-input">
+                        <button type="submit" class="footer-newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Hotel Xenia. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== Room Prices =====
+        const roomPrices = {
+            deluxe: { name: 'Deluxe Room', price: 3500, img: '../image1.jpeg', bed: 'King Bed', size: '40 m²', maxGuests: 2 },
+            executive: { name: 'Executive Suite', price: 4500, img: '../27-1180x710.webp', bed: 'King Bed', size: '65 m²', maxGuests: 3 },
+            presidential: { name: 'Presidential Suite', price: 6500, img: '../19-1-1180x710.webp', bed: '2 King Beds', size: '120 m²', maxGuests: 5 }
+        };
+
+        // ===== Payment Method Toggle =====
+        document.querySelectorAll('.payment-option').forEach(option => {
+            option.addEventListener('click', function () {
+                document.querySelectorAll('.payment-option').forEach(o => o.classList.remove('selected'));
+                this.classList.add('selected');
+                const val = this.querySelector('input[type="radio"]').value;
+                document.getElementById('cardDetails').style.display = val === 'card' ? 'block' : 'none';
+            });
+        });
+
+        // ===== Update Sidebar on Form Change =====
+        function updateSidebar() {
+            const roomType = document.getElementById('roomType').value;
+            const room = roomPrices[roomType];
+            const checkinVal = document.getElementById('checkin').value;
+            const checkoutVal = document.getElementById('checkout').value;
+            const adultsVal = document.getElementById('adults').value;
+            const childrenVal = document.getElementById('children').value;
+            const numRooms = parseInt(document.getElementById('numRooms').value);
+
+            // Room Info
+            document.getElementById('sidebarRoomName').textContent = room.name;
+            document.querySelector('.room-preview-img').src = room.img;
+            document.querySelector('.room-preview-features').innerHTML =
+                `<span><i class="fas fa-bed"></i> ${room.bed}</span>
+                 <span><i class="fas fa-ruler-combined"></i> ${room.size}</span>
+                 <span><i class="fas fa-user"></i> Max ${room.maxGuests}</span>`;
+
+            // Guest count
+            let guestStr = adultsVal + (adultsVal == 1 ? ' Adult' : ' Adults');
+            if (childrenVal > 0) guestStr += ', ' + childrenVal + (childrenVal == 1 ? ' Child' : ' Children');
+            document.getElementById('sidebarGuests').textContent = guestStr;
+
+            // Dates & nights
+            let nights = 1;
+            if (checkinVal && checkoutVal) {
+                const d1 = new Date(checkinVal);
+                const d2 = new Date(checkoutVal);
+                const diff = Math.ceil((d2 - d1) / (1000 * 60 * 60 * 24));
+                if (diff > 0) nights = diff;
+
+                document.getElementById('sidebarCheckin').textContent = d1.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+                document.getElementById('sidebarCheckout').textContent = d2.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+            }
+            document.getElementById('sidebarNights').textContent = nights + (nights === 1 ? ' Night' : ' Nights');
+
+            // Price calculation
+            const rate = room.price;
+            const subtotal = rate * nights * numRooms;
+            const tax = Math.round(subtotal * 0.18);
+            const total = subtotal + tax;
+
+            document.getElementById('priceRate').textContent = '₹' + rate.toLocaleString('en-IN') + ' / night';
+            document.getElementById('priceNightsLabel').textContent = '× ' + nights + (nights === 1 ? ' night' : ' nights') + (numRooms > 1 ? ' × ' + numRooms + ' rooms' : '');
+            document.getElementById('priceSubtotal').textContent = '₹' + subtotal.toLocaleString('en-IN');
+            document.getElementById('priceTax').textContent = '₹' + tax.toLocaleString('en-IN');
+            document.getElementById('priceTotal').textContent = '₹' + total.toLocaleString('en-IN');
+        }
+
+        // Listen for changes
+        ['checkin', 'checkout', 'adults', 'children', 'roomType', 'numRooms'].forEach(id => {
+            document.getElementById(id).addEventListener('change', updateSidebar);
+        });
+
+        // ===== Form Submission =====
+        function handleBooking(e) {
+            e.preventDefault();
+            const form = document.getElementById('bookingForm');
+            const terms = document.getElementById('termsAgree');
+
+            // Basic validation
+            if (!form.checkValidity()) {
+                alert('Please fill in all required fields.');
+                form.reportValidity();
+                return;
+            }
+            if (!terms.checked) {
+                alert('Please agree to the Terms & Conditions to proceed.');
+                return;
+            }
+
+            // Success feedback
+            alert('🎉 Booking Confirmed!\n\nThank you for choosing Hotel Xenia. A confirmation email will be sent to your registered email address shortly.\n\nWe look forward to welcoming you!');
+        }
+
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('checkin').setAttribute('min', today);
+        document.getElementById('checkout').setAttribute('min', today);
+    </script>
+
+</body>
+
+</html>
