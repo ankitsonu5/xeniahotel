@@ -34,52 +34,22 @@
                     <li><a href="contact_us_redesign.html">Contact Us</a></li>
                     <li><a href="my_account_redesign.html">My Account</a></li>
                 </ul>
-                <a href="booking_redesign.html" class="btn">Book Now</a>
+                <a href="rooms/book-room.html" class="btn">Book Now</a>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero"
-        style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('3-e1661517662247-1400x1100.webp'); background-size: cover; background-position: center;">
+        style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('5f3bb17fddc76-Uttar_Pradesh_Attractions.jpg'); background-size: cover; background-position: center;">
         <div class="hero-content">
             <h1>Convenient <strong>City Location</strong></h1>
             <p>Experience luxury and comfort in the heart of the city.</p>
         </div>
     </section>
 
-    <!-- Booking Bar -->
-    <div class="container">
-        <div class="booking-bar">
-            <form class="booking-form">
-                <div class="form-group">
-                    <label>Check In</label>
-                    <input type="date">
-                </div>
-                <div class="form-group">
-                    <label>Check Out</label>
-                    <input type="date">
-                </div>
-                <div class="form-group">
-                    <label>Adults</label>
-                    <select>
-                        <option>1 Adult</option>
-                        <option>2 Adults</option>
-                        <option>3 Adults</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Children</label>
-                    <select>
-                        <option>0 Children</option>
-                        <option>1 Child</option>
-                        <option>2 Children</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn">Check Availability</button>
-            </form>
-        </div>
-    </div>
+
+
 
     <!-- About Section -->
     <section id="about" class="section-padding about-section">
@@ -95,7 +65,7 @@
                     <a href="#" class="btn">Learn More</a>
                 </div>
                 <div class="about-image">
-                    <img src="3-e1661517662247-1400x1100 (1).webp" alt="Hotel Interior">
+                    <img src="3-e1661517662247-1400x1100.webp" alt="Hotel Interior">
                 </div>
             </div>
         </div>
@@ -123,7 +93,7 @@
                         </ul>
                         <p>A distinctive blend of comfort and style, perfect for the modern traveler.</p>
                         <div style="margin-top: 15px;">
-                            <a href="#" class="btn">View Details</a>
+                            <a href="rooms/deluxe-room.html" class="btn">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -141,7 +111,7 @@
                         </ul>
                         <p>Spacious and elegantly designed with premium amenities for a luxurious stay.</p>
                         <div style="margin-top: 15px;">
-                            <a href="#" class="btn">View Details</a>
+                            <a href="rooms/premium-room.html" class="btn">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -159,7 +129,7 @@
                         </ul>
                         <p>The ultimate luxury experience with panoramic city views and exclusive services.</p>
                         <div style="margin-top: 15px;">
-                            <a href="#" class="btn">View Details</a>
+                            <a href="rooms/room-details.html" class="btn">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -229,12 +199,12 @@
                 </div>
                 <div class="footer-col">
                     <h4>Contact Us</h4>
-                    <p><i class="fas fa-map-marker-alt" style="color: var(--primary-gold); margin-right: 10px;"></i> 123
-                        Luxury Avenue, City Center</p>
-                    <p><i class="fas fa-phone" style="color: var(--primary-gold); margin-right: 10px;"></i> +1 (555)
-                        123-4567</p>
-                    <p><i class="fas fa-envelope" style="color: var(--primary-gold); margin-right: 10px;"></i>
-                        info@hotelxenia.com</p>
+                    <p class="footer-contact-item"><i class="fas fa-map-marker-alt"></i>
+                        D-63/11 Akk, Beside Galaxy hospital Mahmoorganj, Varanasi</p>
+                    <p class="footer-contact-item"><i class="fas fa-phone"></i> +91
+                        9151000140</p>
+                    <p class="footer-contact-item"><i class="fas fa-envelope"></i>
+                        reservation@hotelxenia.in</p>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
@@ -244,17 +214,16 @@
                         <li><a href="gallery_redesign.html">Gallery</a></li>
                         <li><a href="index.html#facilities">Facilities</a></li>
                         <li><a href="contact_us_redesign.html">Contact</a></li>
+                        <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                        <li><a href="terms_conditions.html">Terms & Conditions</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Newsletter</h4>
                     <p>Subscribe to our newsletter for offers.</p>
-                    <form style="display: flex; margin-top: 10px;">
-                        <input type="email" placeholder="Email Address"
-                            style="padding: 10px; width: 100%; border: none;">
-                        <button type="submit"
-                            style="background: var(--primary-gold); border: none; padding: 0 15px; color: #fff; cursor: pointer;"><i
-                                class="fas fa-paper-plane"></i></button>
+                    <form class="footer-newsletter-form">
+                        <input type="email" placeholder="Email Address" class="footer-newsletter-input">
+                        <button type="submit" class="footer-newsletter-btn"><i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>
@@ -264,6 +233,66 @@
         </div>
     </footer>
 
+    <!-- Newsletter Popup Modal -->
+    <div id="newsletterModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Join Our Newsletter</h2>
+                <p>Subscribe to receive exclusive offers and updates.</p>
+            </div>
+            <form id="popupNewsletterForm" class="modal-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group phone-group">
+
+                    <input type="tel" placeholder="Phone Number" pattern="[0-9]{10}"
+                        title="Please enter a valid 10-digit Indian phone number" required>
+                </div>
+                <button type="submit" class="btn btn-full">Subscribe Now</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Newsletter Popup Logic
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('newsletterModal');
+            const closeBtn = document.querySelector('.close-modal');
+
+            // Check if user has already seen the popup (using sessionStorage for demo, could be localStorage)
+            if (!sessionStorage.getItem('newsletterShown')) {
+                // Show after 2 seconds
+                setTimeout(() => {
+                    modal.classList.add('show');
+                    sessionStorage.setItem('newsletterShown', 'true');
+                }, 2000);
+            }
+
+            // Close modal functions
+            closeBtn.addEventListener('click', () => {
+                modal.classList.remove('show');
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('show');
+                }
+            });
+
+            // Form submission
+            document.getElementById('popupNewsletterForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+                // Add your submission logic here
+                alert('Thank you for subscribing!');
+                modal.classList.remove('show');
+            });
+        });
+    </script>
 </body>
 
 </html>
