@@ -214,6 +214,8 @@
                         <li><a href="gallery_redesign.html">Gallery</a></li>
                         <li><a href="index.html#facilities">Facilities</a></li>
                         <li><a href="contact_us_redesign.html">Contact</a></li>
+                        <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                        <li><a href="terms_conditions.html">Terms & Conditions</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -231,6 +233,66 @@
         </div>
     </footer>
 
+    <!-- Newsletter Popup Modal -->
+    <div id="newsletterModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Join Our Newsletter</h2>
+                <p>Subscribe to receive exclusive offers and updates.</p>
+            </div>
+            <form id="popupNewsletterForm" class="modal-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group phone-group">
+
+                    <input type="tel" placeholder="Phone Number" pattern="[0-9]{10}"
+                        title="Please enter a valid 10-digit Indian phone number" required>
+                </div>
+                <button type="submit" class="btn btn-full">Subscribe Now</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Newsletter Popup Logic
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('newsletterModal');
+            const closeBtn = document.querySelector('.close-modal');
+
+            // Check if user has already seen the popup (using sessionStorage for demo, could be localStorage)
+            if (!sessionStorage.getItem('newsletterShown')) {
+                // Show after 2 seconds
+                setTimeout(() => {
+                    modal.classList.add('show');
+                    sessionStorage.setItem('newsletterShown', 'true');
+                }, 2000);
+            }
+
+            // Close modal functions
+            closeBtn.addEventListener('click', () => {
+                modal.classList.remove('show');
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('show');
+                }
+            });
+
+            // Form submission
+            document.getElementById('popupNewsletterForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+                // Add your submission logic here
+                alert('Thank you for subscribing!');
+                modal.classList.remove('show');
+            });
+        });
+    </script>
 </body>
 
 </html>
