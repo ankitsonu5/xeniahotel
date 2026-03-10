@@ -41,8 +41,16 @@
     <!-- Hero Section -->
     <section class="hero-carousel">
         <div class="carousel-container">
-            <!-- Slide 1 -->
+            <!-- Slide 4 -->
             <div class="carousel-slide active"
+                style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('wp6612936.jpg');">
+                <div class="hero-content">
+                    <h1>Convenient <strong>City Location</strong></h1>
+                    <p>Experience luxury and comfort in the heart of the city.</p>
+                </div>
+            </div>
+            <!-- Slide 1 -->
+            <div class="carousel-slide"
                 style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('unnamed.webp');align-content: center;">
                 <div class="hero-content">
                     <h1>Luxury <strong>Redefined</strong></h1>
@@ -65,6 +73,7 @@
                     <p>Creating unforgettable memories with every visit.</p>
                 </div>
             </div>
+
         </div>
 
         <!-- Carousel Navigation -->
@@ -74,6 +83,7 @@
         <!-- Carousel Dots -->
         <div class="carousel-dots">
             <span class="dot active"></span>
+            <span class="dot"></span>
             <span class="dot"></span>
             <span class="dot"></span>
         </div>
@@ -111,56 +121,101 @@
             </div>
             <div class="rooms-grid">
                 <!-- Deluxe Room -->
-                <div class="room-card">
+                <div class="room-card deluxe">
                     <div class="room-image">
                         <img src="image1.jpeg" alt="Deluxe Room">
+                        <div class="room-type-overlay">DELUXE ROOM</div>
                     </div>
                     <div class="room-details">
-                        <h3>Deluxe Room</h3>
+                        <h3 class="room-title">Deluxe Room</h3>
                         <ul class="room-meta">
                             <li><i class="fas fa-user"></i> 2 Adults</li>
-                            <li><i class="fas fa-wifi"></i> Free Wifi</li>
+                            <li><i class="fas fa-wifi"></i> Free WiFi</li>
                             <li><i class="fas fa-bed"></i> 1 Bed</li>
                         </ul>
-                        <p>A distinctive blend of comfort and style, perfect for the modern traveler.</p>
-                        <div style="margin-top: 15px;">
-                            <a href="rooms/deluxe-room.html" class="btn">View Details</a>
+                        <p class="room-desc">A distinctive blend of comfort and style, perfect for the modern traveler.
+                        </p>
+
+                        <!-- Complimentary Breakfast -->
+                        <div class="meal-box complimentary">
+                            <div class="meal-header">
+                                <span class="meal-label"><i class="fas fa-utensils"></i> BREAKFAST</span>
+                                <span class="status-badge">COMPLIMENTARY</span>
+                            </div>
+                            <p class="meal-info"><i class="fas fa-check"></i>FREE Buffet Breakfast Included
+                            </p>
+                        </div>
+
+
+                        <div class="room-actions">
+                            <a href="rooms/deluxe-room.html" class="btn btn-card">VIEW DETAILS</a>
                         </div>
                     </div>
                 </div>
+
                 <!-- Premium Room -->
-                <div class="room-card">
+                <div class="room-card premium">
                     <div class="room-image">
                         <img src="27-1180x710.webp" alt="Premium Room">
+                        <div class="room-type-overlay">PREMIUM ROOM</div>
                     </div>
                     <div class="room-details">
-                        <h3>Premium Room</h3>
+                        <h3 class="room-title">Premium Room</h3>
                         <ul class="room-meta">
-                            <li><i class="fas fa-user_friends"></i> 3 Adults</li>
-                            <li><i class="fas fa-wifi"></i> Free Wifi</li>
+                            <li><i class="fas fa-user-friends"></i> 3 Adults</li>
+                            <li><i class="fas fa-wifi"></i> Free WiFi</li>
                             <li><i class="fas fa-bed"></i> 2 Beds</li>
                         </ul>
-                        <p>Spacious and elegantly designed with premium amenities for a luxurious stay.</p>
-                        <div style="margin-top: 15px;">
-                            <a href="rooms/premium-room.html" class="btn">View Details</a>
+                        <p class="room-desc">Spacious and elegantly designed with premium amenities for a luxurious
+                            stay.</p>
+
+                        <!-- Complimentary Breakfast -->
+                        <div class="meal-box complimentary">
+                            <div class="meal-header">
+                                <span class="meal-label"><i class="fas fa-utensils"></i> BREAKFAST</span>
+                                <span class="status-badge">COMPLIMENTARY</span>
+                            </div>
+                            <p class="meal-info"><i class="fas fa-check"></i> FREE Buffet Breakfast Included
+                            </p>
+                        </div>
+
+
+                        <div class="room-actions">
+                            <a href="rooms/premium-room.html" class="btn btn-card">VIEW DETAILS</a>
                         </div>
                     </div>
                 </div>
-                <!-- Additional Room for Grid Balance -->
-                <div class="room-card">
+
+                <!-- Executive Suite -->
+                <div class="room-card executive">
                     <div class="room-image">
-                        <img src="19-1-1180x710.webp" alt="Suite">
+                        <img src="19-1-1180x710.webp" alt="Executive Suite">
+                        <div class="room-type-overlay">Executive Suite</div>
                     </div>
                     <div class="room-details">
-                        <h3>Executive Suite</h3>
+                        <h3 class="room-title">Executive Suite</h3>
                         <ul class="room-meta">
                             <li><i class="fas fa-user-tie"></i> 2 Adults</li>
-                            <li><i class="fas fa-wine-glass"></i> Minibar</li>
-                            <li><i class="fas fa-bath"></i> Jacuzzi</li>
+                            <li><i class="fas fa-wine-glass"></i> Free WiFi</li>
+                            <li><i class="fas fa-wine-glass"></i> 1 Bed </li>
+
                         </ul>
-                        <p>The ultimate luxury experience with panoramic city views and exclusive services.</p>
-                        <div style="margin-top: 15px;">
-                            <a href="rooms/room-details.html" class="btn">View Details</a>
+                        <p class="room-desc">The ultimate luxury experience with panoramic and exclusive
+                            services.</p>
+
+                        <!-- Complimentary Breakfast -->
+                        <div class="meal-box complimentary">
+                            <div class="meal-header">
+                                <span class="meal-label"><i class="fas fa-utensils"></i> BREAKFAST</span>
+                                <span class="status-badge">COMPLIMENTARY</span>
+                            </div>
+                            <p class="meal-info"><i class="fas fa-check"></i> FREE Buffet Breakfast Included
+                            </p>
+                        </div>
+
+
+                        <div class="room-actions">
+                            <a href="rooms/room-details.html" class="btn btn-card">VIEW DETAILS</a>
                         </div>
                     </div>
                 </div>
@@ -191,7 +246,7 @@
             <div class="facilities-grid">
                 <div class="facility-item">
                     <i class="fas fa-city facility-icon"></i>
-                    <h4>City Views</h4>
+                    <h4>s</h4>
                     <p>Enjoy breathtaking views of the city skyline from your room.</p>
                 </div>
                 <div class="facility-item">
@@ -265,29 +320,7 @@
     </footer>
 
     <!-- Newsletter Popup Modal -->
-    <div id="newsletterModal" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-header">
-                <h2>Join Our Newsletter</h2>
-                <p>Subscribe to receive exclusive offers and updates.</p>
-            </div>
-            <form id="popupNewsletterForm" class="modal-form">
-                <div class="form-group">
-                    <input type="text" placeholder="Full Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Email Address" required>
-                </div>
-                <div class="form-group phone-group">
 
-                    <input type="tel" placeholder="Phone Number" pattern="[0-9]{10}"
-                        title="Please enter a valid 10-digit Indian phone number" required>
-                </div>
-                <button type="submit" class="btn btn-full">Subscribe Now</button>
-            </form>
-        </div>
-    </div>
 
     <script>
         // Hero Carousel Logic
@@ -352,38 +385,6 @@
             const carousel = document.querySelector('.hero-carousel');
             carousel.addEventListener('mouseenter', stopAutoPlay);
             carousel.addEventListener('mouseleave', startAutoPlay);
-
-            // Newsletter Popup Logic
-            const modal = document.getElementById('newsletterModal');
-            const closeBtn = document.querySelector('.close-modal');
-
-            // Check if user has already seen the popup (using sessionStorage for demo, could be localStorage)
-            if (!sessionStorage.getItem('newsletterShown')) {
-                // Show after 2 seconds
-                setTimeout(() => {
-                    modal.classList.add('show');
-                    sessionStorage.setItem('newsletterShown', 'true');
-                }, 2000);
-            }
-
-            // Close modal functions
-            closeBtn.addEventListener('click', () => {
-                modal.classList.remove('show');
-            });
-
-            window.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.classList.remove('show');
-                }
-            });
-
-            // Form submission
-            document.getElementById('popupNewsletterForm').addEventListener('submit', function (e) {
-                e.preventDefault();
-                // Add your submission logic here
-                alert('Thank you for subscribing!');
-                modal.classList.remove('show');
-            });
         });
     </script>
 </body>

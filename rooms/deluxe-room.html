@@ -110,6 +110,209 @@
             margin-top: 50px;
         }
 
+        /* Meal Plan Cards */
+        .meal-plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .meal-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            border: 1px solid #f0ece4;
+        }
+
+        .meal-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .meal-card.featured {
+            border: 2px solid var(--primary-gold);
+        }
+
+        .meal-card-header {
+            padding: 30px 25px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .meal-card-header .meal-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-gold), #d4a843);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            box-shadow: 0 4px 15px rgba(183, 142, 58, 0.3);
+        }
+
+        .meal-card-header .meal-icon i {
+            font-size: 1.6rem;
+            color: #fff;
+        }
+
+        .meal-card-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .meal-card-header .meal-subtitle {
+            font-size: 0.9rem;
+            color: #888;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .meal-card-price {
+            padding: 15px 25px;
+            text-align: center;
+            background: linear-gradient(135deg, #faf8f3, #f5f0e6);
+            border-top: 1px solid #f0ece4;
+            border-bottom: 1px solid #f0ece4;
+        }
+
+        .meal-card-price .price-tag {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+        }
+
+        .meal-card-price .price-tag.free {
+            color: #2ecc71;
+        }
+
+        .meal-card-price .price-period {
+            font-size: 0.85rem;
+            color: #999;
+            margin-left: 4px;
+        }
+
+        .meal-card-body {
+            padding: 25px;
+        }
+
+        .meal-card-body ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .meal-card-body ul li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            color: #555;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .meal-card-body ul li:last-child {
+            border-bottom: none;
+        }
+
+        .meal-card-body ul li i {
+            color: var(--primary-gold);
+            font-size: 0.85rem;
+            width: 18px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .meal-card-footer {
+            padding: 0 25px 25px;
+            text-align: center;
+        }
+
+        .meal-card-footer .btn-meal {
+            display: inline-block;
+            width: 100%;
+            padding: 12px 20px;
+            border: 2px solid var(--primary-gold);
+            background: transparent;
+            color: var(--primary-gold);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .meal-card-footer .btn-meal:hover {
+            background: var(--primary-gold);
+            color: #fff;
+        }
+
+        .meal-card.featured .meal-card-footer .btn-meal {
+            background: var(--primary-gold);
+            color: #fff;
+        }
+
+        .meal-card.featured .meal-card-footer .btn-meal:hover {
+            background: transparent;
+            color: var(--primary-gold);
+        }
+
+        .meal-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
+
+        .meal-badge.popular {
+            background: linear-gradient(135deg, var(--primary-gold), #d4a843);
+        }
+
+        .meal-card-final-price {
+            padding: 12px 25px;
+            text-align: center;
+            background: #1a1a1a;
+        }
+
+        .meal-card-final-price .final-label {
+            font-size: 0.75rem;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .meal-card-final-price .final-amount {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .meal-card-final-price .final-period {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
         /* Policy Section */
         .policy-section {
             margin-top: 50px;
@@ -228,7 +431,7 @@
                 </div>
                 <div class="info-item">
                     <i class="fas fa-city"></i>
-                    <span>City View</span>
+                    <span></span>
                 </div>
             </div>
         </div>
@@ -276,14 +479,7 @@
                 <i class="fas fa-wifi"></i>
                 <span>High-Speed Internet</span>
             </div>
-            <div class="amenity-card">
-                <i class="fas fa-tv"></i>
-                <span>43" Smart TV</span>
-            </div>
-            <div class="amenity-card">
-                <i class="fas fa-coffee"></i>
-                <span>Tea/Coffee Maker</span>
-            </div>
+
             <div class="amenity-card">
                 <i class="fas fa-snowflake"></i>
                 <span>Air Conditioning</span>
@@ -292,10 +488,7 @@
                 <i class="fas fa-concierge-bell"></i>
                 <span>24/7 Room Service</span>
             </div>
-            <div class="amenity-card">
-                <i class="fas fa-safe"></i>
-                <span>Electronic Safe</span>
-            </div>
+
             <div class="amenity-card">
                 <i class="fas fa-shower"></i>
                 <span>Rain Shower</span>
@@ -306,6 +499,94 @@
             </div>
         </div>
 
+        <div class="section-title text-center">
+            <h2>Meal Plans</h2>
+        </div>
+
+        <div class="meal-plans-grid">
+            <!-- Card 1: Free Buffet Meals -->
+            <div class="meal-card">
+                <div class="meal-card-header">
+                    <span class="meal-badge">Complimentary</span>
+                    <div class="meal-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Free Buffet Meals</h3>
+                    <span class="meal-subtitle">Included with your stay</span>
+                </div>
+
+                <div class="meal-card-final-price">
+                    <span class="final-label">Room + Meal Total</span>
+                    <span class="final-amount">₹6,000</span>
+                    <span class="final-period">/ night</span>
+                </div>
+                <div class="meal-card-body">
+                    <ul>
+                        <li><i class="fas fa-check"></i> Complimentary breakfast buffet</li>
+
+                    </ul>
+                </div>
+                <div class="meal-card-footer">
+                    <a href="../booking_redesign.html" class="btn-meal">Select Plan</a>
+                </div>
+            </div>
+
+            <!-- Card 2: Breakfast or Dinner Plan -->
+            <div class="meal-card featured">
+                <div class="meal-card-header">
+                    <span class="meal-badge popular">Popular</span>
+                    <div class="meal-icon">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <h3>Breakfast or Dinner</h3>
+                    <span class="meal-subtitle">Choose one meal daily</span>
+                </div>
+
+                <div class="meal-card-final-price">
+                    <span class="final-label">Room + Meal Total</span>
+                    <span class="final-amount">₹6,350</span>
+                    <span class="final-period">/ night</span>
+                </div>
+                <div class="meal-card-body">
+                    <ul>
+                        <li><i class="fas fa-check"></i> Choice of lunch or dinner with complimentary Breakfast</li>
+
+                    </ul>
+                </div>
+                <div class="meal-card-footer">
+                    <a href="../booking_redesign.html" class="btn-meal">Select Plan</a>
+                </div>
+            </div>
+
+            <!-- Card 3: Lunch & Dinner Plan -->
+            <div class="meal-card">
+                <div class="meal-card-header">
+                    <div class="meal-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3>Lunch & Dinner</h3>
+                    <span class="meal-subtitle">Two meals daily</span>
+                </div>
+
+                <div class="meal-card-final-price">
+                    <span class="final-label">Room + Meal Total</span>
+                    <span class="final-amount">₹6,700</span>
+                    <span class="final-period">/ night</span>
+                </div>
+                <div class="meal-card-body">
+                    <ul>
+                        <li><i class="fas fa-check"></i> Both lunch and dinner included with complimentary Breakfast
+                        </li>
+
+
+
+                    </ul>
+                </div>
+                <div class="meal-card-footer">
+                    <a href="../booking_redesign.html" class="btn-meal">Select Plan</a>
+                </div>
+            </div>
+        </div>
         <!-- Booking Policy -->
         <div class="section-title text-center">
             <h2>Booking Policy</h2>
@@ -348,7 +629,7 @@
                 <div
                     style="background: #fff; padding: 20px; border-radius: 4px; border: 1px solid #ddd; min-width: 200px;">
                     <span style="display: block; font-size: 0.9rem; color: #888;">Start From</span>
-                    <strong style="font-size: 1.5rem; color: var(--primary-gold);">₹3,500 / Night</strong>
+                    <strong style="font-size: 1.5rem; color: var(--primary-gold);">₹4000 / Night</strong>
                 </div>
                 <a href="../booking_redesign.html" class="btn"
                     style="display: flex; align-items: center; height: fit-content; align-self: center;">Book Now</a>
