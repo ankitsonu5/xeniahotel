@@ -39,11 +39,43 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero"
-        style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('5f3bb17fddc76-Uttar_Pradesh_Attractions.jpg'); background-size: cover; background-position: center;">
-        <div class="hero-content">
-            <h1>Convenient <strong>City Location</strong></h1>
-            <p>Experience luxury and comfort in the heart of the city.</p>
+    <section class="hero-carousel">
+        <div class="carousel-container">
+            <!-- Slide 1 -->
+            <div class="carousel-slide active"
+                style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('unnamed.webp');">
+                <div class="hero-content">
+                    <h1>Luxury <strong>Redefined</strong></h1>
+                    <p>Experience the perfect blend of tradition and modern comfort.</p>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-slide"
+                style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('2025-11-17.webp');">
+                <div class="hero-content">
+                    <h1>Premium <strong>Hospitality</strong></h1>
+                    <p>Your sanctuary in the heart of the historic city.</p>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-slide"
+                style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('2022-09-06.webp');">
+                <div class="hero-content">
+                    <h1>Elegant <strong>Stays</strong></h1>
+                    <p>Creating unforgettable memories with every visit.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Navigation -->
+        <button class="carousel-btn prev" aria-label="Previous Slide"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-btn next" aria-label="Next Slide"><i class="fas fa-chevron-right"></i></button>
+
+        <!-- Carousel Dots -->
+        <div class="carousel-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
         </div>
     </section>
 
@@ -258,8 +290,70 @@
     </div>
 
     <script>
-        // Newsletter Popup Logic
+        // Hero Carousel Logic
         document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const dots = document.querySelectorAll('.dot');
+            const prevBtn = document.querySelector('.carousel-btn.prev');
+            const nextBtn = document.querySelector('.carousel-btn.next');
+            let currentSlide = 0;
+            let slideInterval;
+
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+
+            function nextSlide() {
+                let next = (currentSlide + 1) % slides.length;
+                showSlide(next);
+            }
+
+            function prevSlide() {
+                let prev = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(prev);
+            }
+
+            function startAutoPlay() {
+                stopAutoPlay();
+                slideInterval = setInterval(nextSlide, 5000);
+            }
+
+            function stopAutoPlay() {
+                clearInterval(slideInterval);
+            }
+
+            // Event Listeners
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                startAutoPlay();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                startAutoPlay();
+            });
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showSlide(index);
+                    startAutoPlay();
+                });
+            });
+
+            // Start AutoPlay
+            startAutoPlay();
+
+            // Pause on hover
+            const carousel = document.querySelector('.hero-carousel');
+            carousel.addEventListener('mouseenter', stopAutoPlay);
+            carousel.addEventListener('mouseleave', startAutoPlay);
+
+            // Newsletter Popup Logic
             const modal = document.getElementById('newsletterModal');
             const closeBtn = document.querySelector('.close-modal');
 
