@@ -28,12 +28,13 @@
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about_us_redesign.html">About Us</a></li>
-                    <li><a href="services_redesign.html">Services</a></li>
-                    <li><a href="gallery_redesign.html">Gallery</a></li>
-                    <li><a href="contact_us_redesign.html">Contact Us</a></li>
+                    <li><a href="about-us-redesign.html">About Us</a></li>
+                    <li><a href="services-redesign.html">Services</a></li>
+                    <li><a href="gallery-redesign.html">Gallery</a></li>
+                    <li><a href="contact-us-redesign.html">Contact Us</a></li>
                     <li><a href="my_account_redesign.html"></a></li>
                 </ul>
+                <div id="google_translate_element" class="translate-widget"></div>
                 <a href="rooms/book-room.html" class="btn">Book Now</a>
             </nav>
         </div>
@@ -93,7 +94,7 @@
                         </div>
                         <p>Enjoy a comfortable stay with s and modern amenities.</p>
                         <div class="price">₹4000 / night</div>
-                        <a href="rooms/book-room.html" class="btn">Book Now</a>
+                        <a href="rooms/book-room.html?type=deluxe" class="btn">Book Now</a>
                     </div>
                 </div>
 
@@ -111,7 +112,7 @@
                         </div>
                         <p>Spacious Executive Suite with a separate living area and premium bathroom.</p>
                         <div class="price">₹5000 / night</div>
-                        <a href="rooms/book-room.html" class="btn">Book Now</a>
+                        <a href="rooms/book-room.html?type=executive" class="btn">Book Now</a>
                     </div>
                 </div>
 
@@ -121,15 +122,15 @@
                         <img src="19-1-1180x710.webp" alt="Presidential Executive Suite">
                     </div>
                     <div class="room-result-content">
-                        <h3>Presidential Executive Suite</h3>
+                        <h3>Executive Suite</h3>
                         <div class="room-features">
                             <span><i class="fas fa-bed"></i> 2 King Beds</span>
                             <span><i class="fas fa-ruler-combined"></i> 120 m²</span>
                             <span><i class="fas fa-user"></i> Max 5 Guests</span>
                         </div>
                         <p>The ultimate luxury experience with panoramic views and butler service.</p>
-                        <div class="price">₹6000 / night</div>
-                        <a href="rooms/book-room.html" class="btn">Book Now</a>
+                        <div class="price">₹6500 / night</div>
+                        <a href="rooms/book-room.html?type=presidential" class="btn">Enquire Now</a>
                     </div>
                 </div>
             </div>
@@ -155,19 +156,24 @@
                     <h4>Contact Us</h4>
                     <p class="footer-contact-item"><i class="fas fa-map-marker-alt"></i>
                         D-63/11 Akk, Beside Galaxy hospital Mahmoorganj, Varanasi</p>
-                    <p class="footer-contact-item"><i class="fas fa-phone"></i> +91
-                        9151000140</p>
+                    <p class="footer-contact-item"><i class="fas fa-phone"></i>
+                        <span style="display: inline-flex; flex-direction: column; gap: 5px; vertical-align: top;">
+                            <a href="tel:+919151000140">+91 9151000140</a>
+                            <a href="tel:+919151000142">+91 9151000142</a>
+                            <a href="tel:+919151000144">+91 9151000144</a>
+                        </span>
+                    </p>
                     <p class="footer-contact-item"><i class="fas fa-envelope"></i>
                         reservation@hotelxenia.in</p>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="about_us_redesign.html">About Us</a></li>
-                        <li><a href="services_redesign.html">Services</a></li>
-                        <li><a href="gallery_redesign.html">Gallery</a></li>
+                        <li><a href="about-us-redesign.html">About Us</a></li>
+                        <li><a href="services-redesign.html">Services</a></li>
+                        <li><a href="gallery-redesign.html">Gallery</a></li>
                         <li><a href="index.html#facilities">Facilities</a></li>
-                        <li><a href="contact_us_redesign.html">Contact</a></li>
+                        <li><a href="contact-us-redesign.html">Contact</a></li>
                         <li><a href="privacy_policy.html">Privacy Policy</a></li>
                         <li><a href="terms_conditions.html">Terms & Conditions</a></li>
                     </ul>
@@ -186,6 +192,19 @@
             </div>
         </div>
     </footer>
+
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi,bn,mr,te,ta,gu,ur,kn,or,ml,pa,as',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 
