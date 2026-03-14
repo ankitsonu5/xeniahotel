@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $numRooms = filter_var($_POST['numRooms'], FILTER_SANITIZE_NUMBER_INT);
     $mealPlan = filter_var($_POST['mealPlan'], FILTER_SANITIZE_STRING);
     $specialRequests = filter_var($_POST['specialRequests'], FILTER_SANITIZE_STRING);
-    $travellingWithPets = isset($_POST['travellingWithPets']) ? 'Yes' : 'No';
+
 
     // Collect children ages if any
     $childrenAges = [];
@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <tr><td class='label'>Room Type:</td><td>$roomType</td></tr>
                     <tr><td class='label'>No. of Rooms:</td><td>$numRooms</td></tr>
                     <tr><td class='label'>Meal Plan:</td><td>$mealPlan</td></tr>
-                    <tr><td class='label'>Traveling with Pets:</td><td>$travellingWithPets</td></tr>
+
                 </table>
             </div>
 

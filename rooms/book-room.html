@@ -636,53 +636,6 @@
             color: #555;
             min-width: 60px;
         }
-
-        /* --- Pet Policy --- */
-        .pet-policy-card {
-            margin-top: 30px;
-            padding: 25px;
-            border: 1px solid #eee;
-            border-radius: 12px;
-            background: #fff;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .pet-policy-card:hover {
-            border-color: var(--primary-gold-light);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .pet-policy-info h4 {
-            font-size: 1rem;
-            margin-bottom: 5px;
-            color: var(--text-dark);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .pet-policy-info p {
-            font-size: 0.85rem;
-            color: #777;
-            margin: 0;
-            line-height: 1.4;
-        }
-
-        .pet-icon {
-            font-size: 2rem;
-            color: #888;
-            margin-left: auto;
-        }
-
-        .pet-checkbox {
-            width: 20px;
-            height: 20px;
-            accent-color: var(--primary-gold);
-            cursor: pointer;
-        }
     </style>
 </head>
 
@@ -903,19 +856,7 @@
                                             placeholder="Airport pickup, extra bed, early check-in, dietary requirements, etc."></textarea>
                                     </div>
                                 </div>
-                                <!-- Pet Policy -->
-                                <div class="pet-policy-card">
-                                    <input type="checkbox" id="travellingWithPets" name="travellingWithPets"
-                                        class="pet-checkbox">
-                                    <div class="pet-policy-info">
-                                        <h4>Are you travelling with pets?</h4>
-                                        <p>Selecting this option will show only pet-friendly properties. Please review
-                                            the pet policies &amp; applicable fees, if any.</p>
-                                    </div>
-                                    <div class="pet-icon">
-                                        <i class="fas fa-paw"></i>
-                                    </div>
-                                </div>
+
 
                                 <!-- Terms and Submit -->
                                 <div style="margin-top: 30px;">
@@ -973,15 +914,15 @@
                             <p>Our team is available 24/7</p>
                             <p style="margin-bottom: 10px;">
                                 <i class="fas fa-phone" style="margin-right: 5px; color: var(--primary-gold);"></i>
-                                <a href="tel:+919151000140">+91 9151000140</a>
+                                <a href="tel:+919151000140">+91 9151000144</a>
                             </p>
                             <p style="margin-bottom: 10px;">
                                 <i class="fas fa-phone" style="margin-right: 5px; color: var(--primary-gold);"></i>
-                                <a href="tel:+919151000142">+91 9151000142</a>
+                                <a href="tel:+919151000142">+91 9151000140</a>
                             </p>
                             <p style="margin-bottom: 10px;">
                                 <i class="fas fa-phone" style="margin-right: 5px; color: var(--primary-gold);"></i>
-                                <a href="tel:+919151000144">+91 9151000144</a>
+                                <a href="tel:+919151000144">+91 9151000142</a>
                             </p>
                             <p><a href="mailto:reservations@hotelxenia.in"><i class="fas fa-envelope"
                                         style="margin-right: 5px;"></i>reservations@hotelxenia.in</a></p>
@@ -997,7 +938,7 @@
                 <div class="policy-grid">
                     <div class="policy-item">
                         <i class="fas fa-clock"></i>
-                        <p><strong>Check-in/Check-out:</strong> Check-in time is 12:00 PM. Check-out time is 12:00 PM.
+                        <p><strong>Check-in/Check-out:</strong> Check-in time is 12:00 PM. Check-out time is 11:00 AM.
                             Early check-in or late check-out is subject to availability and may be chargeable by the
                             hotel directly.</p>
                     </div>
@@ -1047,9 +988,8 @@
                         our guests.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -1098,7 +1038,7 @@
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
-                includedLanguages: 'en,hi,bn,mr,te,ta,gu,ur,kn,or,ml,pa,as',
+                includedLanguages: 'en,hi,bn,mr,te,ta,gu,ur,kn,or,ml,pa,as,sa,sd,bho,doi,kok,ks,mai,mni,ne,sat,brx,awa,kha,trp,mwr,tcy',
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
         }
@@ -1239,7 +1179,7 @@
         });
 
         // Listen for changes
-        ['checkin', 'checkout', 'adults', 'children', 'roomType', 'numRooms', 'mealPlan', 'travellingWithPets'].forEach(id => {
+        ['checkin', 'checkout', 'adults', 'children', 'roomType', 'numRooms', 'mealPlan'].forEach(id => {
             const el = document.getElementById(id);
             if (el) {
                 el.addEventListener('change', () => {
