@@ -355,6 +355,58 @@
             color: var(--primary-gold);
             margin-top: 5px;
         }
+
+        /* Room Page Responsive */
+        @media (max-width: 768px) {
+            .room-hero {
+                height: 50vh;
+                margin-bottom: 30px;
+            }
+
+            .room-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .info-grid {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .info-item {
+                font-size: 0.95rem;
+            }
+
+            .room-description {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+
+            .amenities-grid-detail {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .meal-plans-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .policy-section {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .room-hero h1 {
+                font-size: 2rem;
+            }
+
+            .amenities-grid-detail {
+                grid-template-columns: 1fr;
+            }
+
+            .room-hero {
+                height: 40vh;
+            }
+        }
     </style>
 </head>
 
@@ -375,9 +427,16 @@
                     <li><a href="../services-redesign.html">Services</a></li>
                     <li><a href="../gallery-redesign.html">Gallery</a></li>
                     <li><a href="../contact-us-redesign.html">Contact Us</a></li>
-                    <li><a href="../my_account_redesign.html"></a></li>
                 </ul>
-                <div id="google_translate_element" class="translate-widget"></div>
+                <button class="hamburger" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="translate-widget">
+                    <button type="button" class="translate-button" aria-label="Open translation menu">Translate</button>
+                    <div id="google_translate_element" class="translate-widget-menu"></div>
+                </div>
                 <a href="book-room.html?type=presidential" class="btn">Enquire Now</a>
             </nav>
         </div>
@@ -690,6 +749,7 @@
         </div>
     </footer>
 
+    <script src="../translate-widget.js"></script>
     <!-- Google Translate Script -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
@@ -698,10 +758,21 @@
                 includedLanguages: 'en,hi,bn,mr,te,ta,gu,ur,kn,or,ml,pa,as,sa,sd,bho,doi,kok,ks,mai,mni,ne,sat,brx,awa,kha,trp,mwr,tcy',
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
+            if (window.initializeCustomTranslateWidget) {
+                window.initializeCustomTranslateWidget();
+            }
         }
     </script>
     <script type="text/javascript"
         src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Mobile Menu Toggle -->
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
 
 </body>
 

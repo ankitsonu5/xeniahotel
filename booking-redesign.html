@@ -34,7 +34,10 @@
                     <li><a href="contact-us-redesign.html">Contact Us</a></li>
                     <li><a href="my_account_redesign.html"></a></li>
                 </ul>
-                <div id="google_translate_element" class="translate-widget"></div>
+                <div class="translate-widget">
+                    <button type="button" class="translate-button" aria-label="Open translation menu">Translate</button>
+                    <div id="google_translate_element" class="translate-widget-menu"></div>
+                </div>
                 <a href="rooms/book-room.html" class="btn">Book Now</a>
             </nav>
         </div>
@@ -192,6 +195,7 @@
         </div>
     </footer>
 
+    <script src="translate-widget.js"></script>
     <!-- Google Translate Script -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
@@ -200,6 +204,9 @@
                 includedLanguages: 'en,hi,bn,mr,te,ta,gu,ur,kn,or,ml,pa,as,sa,sd,bho,doi,kok,ks,mai,mni,ne,sat,brx,awa,kha,trp,mwr,tcy',
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
+            if (window.initializeCustomTranslateWidget) {
+                window.initializeCustomTranslateWidget();
+            }
         }
     </script>
     <script type="text/javascript"

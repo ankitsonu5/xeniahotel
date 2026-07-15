@@ -656,9 +656,16 @@
                     <li><a href="../services-redesign.html">Services</a></li>
                     <li><a href="../gallery-redesign.html">Gallery</a></li>
                     <li><a href="../contact-us-redesign.html">Contact Us</a></li>
-                    <li><a href="../my_account_redesign.html"></a></li>
                 </ul>
-                <div id="google_translate_element" class="translate-widget"></div>
+                <button class="hamburger" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="translate-widget">
+                    <button type="button" class="translate-button" aria-label="Open translation menu">Translate</button>
+                    <div id="google_translate_element" class="translate-widget-menu"></div>
+                </div>
                 <a href="../book-room.html" class="btn">Enquire Now</a>
             </nav>
         </div>
@@ -892,7 +899,7 @@
                             <h4><i class="fas fa-bed" style="margin-right: 8px;"></i> Your Room</h4>
                         </div>
                         <div class="sidebar-card-body">
-                            <img src="../image1.jpeg" alt="Deluxe Room" class="room-preview-img">
+                            <img src="../images/deluxe.webp" alt="Deluxe Room" class="room-preview-img">
                             <div class="room-preview-name" id="sidebarRoomName">Deluxe Room</div>
                             <div class="room-preview-features">
                                 <span><i class="fas fa-bed"></i> King Bed</span>
@@ -1033,6 +1040,7 @@
         </div>
     </footer>
 
+    <script src="../translate-widget.js"></script>
     <!-- Google Translate Script -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
@@ -1041,6 +1049,9 @@
                 includedLanguages: 'en,hi,bn,mr,te,ta,gu,ur,kn,or,ml,pa,as,sa,sd,bho,doi,kok,ks,mai,mni,ne,sat,brx,awa,kha,trp,mwr,tcy',
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
+            if (window.initializeCustomTranslateWidget) {
+                window.initializeCustomTranslateWidget();
+            }
         }
     </script>
     <script type="text/javascript"
@@ -1049,9 +1060,9 @@
     <script>
         // ===== Room Prices =====
         const roomPrices = {
-            deluxe: { name: 'Deluxe Room', price: 2750, img: '../deluxe.webp', bed: 'King Bed', size: '40 m²', maxGuests: 2 },
-            executive: { name: 'Premium Room', price: 3750, img: '../premium.webp', bed: 'King Bed', size: '65 m²', maxGuests: 3 },
-            presidential: { name: 'Executive Suite', price: 4750, img: '../suite.webp', bed: '2 King Beds', size: '120 m²', maxGuests: 5 }
+            deluxe: { name: 'Deluxe Room', price: 2750, img: '../images/deluxe.webp', bed: 'King Bed', size: '40 m²', maxGuests: 2 },
+            executive: { name: 'Premium Room', price: 3750, img: '../images/premium.webp', bed: 'King Bed', size: '65 m²', maxGuests: 3 },
+            presidential: { name: 'Executive Suite', price: 4750, img: '../images/suite.webp', bed: '2 King Beds', size: '120 m²', maxGuests: 5 }
         };
 
         const mealSupplements = {
@@ -1274,6 +1285,14 @@
                 // Initialize labels even if no pre-selection
                 updateMealPlanPrices();
             }
+        });
+    </script>
+
+    <!-- Mobile Menu Toggle -->
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('active');
         });
     </script>
 
